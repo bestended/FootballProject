@@ -1,0 +1,52 @@
+﻿@model IEnumerable<mvcFutbol.Models.Hakemim>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hakem Listesi</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "HakemEY", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HakemAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HakemTelefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TecrubeYili)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HakemYas)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HakemAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HakemTelefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TecrubeYili)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HakemYas)
+            </td>
+
+            <td>
+                @Html.ActionLink("Güncelle", "HakemEY", new { id = item.HakemId }, new {@class="btn btn-warning"}) |
+                @Html.ActionLink("Sil", "Sil", new { id = item.HakemId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

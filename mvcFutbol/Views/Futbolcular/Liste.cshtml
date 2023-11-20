@@ -1,0 +1,52 @@
+﻿@model IEnumerable<mvcFutbol.Models.Futbolcum>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Futbolcu Listesi</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "FutbolcuEY", null, new {@class="btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FutbolcuAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FutbolcuSoyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefonu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ulkesi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FutbolcuAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FutbolcuSoyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefonu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulkesi)
+        </td>
+  
+        <td>
+            @Html.ActionLink("Güncelle", "FutbolcuEY", new { id = item.FormaNo }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Sil", "Sil", new { id = item.FormaNo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

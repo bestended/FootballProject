@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FutbolApiMvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Futbolcular">
+          <Key>
+            <PropertyRef Name="FormaNo" />
+          </Key>
+          <Property Name="FormaNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FutbolcuAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="FutbolcuSoyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefonu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ulkesi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hakemler">
+          <Key>
+            <PropertyRef Name="HakemId" />
+          </Key>
+          <Property Name="HakemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HakemAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="HakemTelefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="TecrubeYili" Type="int" />
+          <Property Name="HakemYas" Type="int" />
+        </EntityType>
+        <EntityType Name="Maclar">
+          <Key>
+            <PropertyRef Name="MacId" />
+          </Key>
+          <Property Name="MacId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MacSehir" Type="nvarchar" MaxLength="50" />
+          <Property Name="TaraftarSayisi" Type="int" />
+          <Property Name="GirisUcret" Type="money" />
+          <Property Name="MacTarih" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Takimlar">
+          <Key>
+            <PropertyRef Name="TakimId" />
+          </Key>
+          <Property Name="TakimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TakimAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="TakimSehri" Type="nvarchar" MaxLength="50" />
+          <Property Name="TakimUlkesi" Type="nvarchar" MaxLength="50" />
+          <Property Name="TakimGalibiyet" Type="int" />
+          <Property Name="TakimMalubiyet" Type="int" />
+          <Property Name="TakimBeraberlik" Type="int" />
+        </EntityType>
+        <EntityContainer Name="FutbolApiMvcModelStoreContainer">
+          <EntitySet Name="Futbolcular" EntityType="Self.Futbolcular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hakemler" EntityType="Self.Hakemler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Maclar" EntityType="Self.Maclar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Takimlar" EntityType="Self.Takimlar" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FutbolApiMvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Futbolcular">
+          <Key>
+            <PropertyRef Name="FormaNo" />
+          </Key>
+          <Property Name="FormaNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FutbolcuAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FutbolcuSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ulkesi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hakemler">
+          <Key>
+            <PropertyRef Name="HakemId" />
+          </Key>
+          <Property Name="HakemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HakemAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HakemTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TecrubeYili" Type="Int32" />
+          <Property Name="HakemYas" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Maclar">
+          <Key>
+            <PropertyRef Name="MacId" />
+          </Key>
+          <Property Name="MacId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MacSehir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TaraftarSayisi" Type="Int32" />
+          <Property Name="GirisUcret" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MacTarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Takimlar">
+          <Key>
+            <PropertyRef Name="TakimId" />
+          </Key>
+          <Property Name="TakimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TakimAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TakimSehri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TakimUlkesi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TakimGalibiyet" Type="Int32" />
+          <Property Name="TakimMalubiyet" Type="Int32" />
+          <Property Name="TakimBeraberlik" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="FutbolApiMvcEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Futbolculars" EntityType="Self.Futbolcular" />
+          <EntitySet Name="Hakemlers" EntityType="Self.Hakemler" />
+          <EntitySet Name="Maclars" EntityType="Self.Maclar" />
+          <EntitySet Name="Takimlars" EntityType="Self.Takimlar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FutbolApiMvcModelStoreContainer" CdmEntityContainer="FutbolApiMvcEntities">
+          <EntitySetMapping Name="Futbolculars">
+            <EntityTypeMapping TypeName="FutbolApiMvcModel.Futbolcular">
+              <MappingFragment StoreEntitySet="Futbolcular">
+                <ScalarProperty Name="FormaNo" ColumnName="FormaNo" />
+                <ScalarProperty Name="FutbolcuAdi" ColumnName="FutbolcuAdi" />
+                <ScalarProperty Name="FutbolcuSoyadi" ColumnName="FutbolcuSoyadi" />
+                <ScalarProperty Name="Telefonu" ColumnName="Telefonu" />
+                <ScalarProperty Name="Ulkesi" ColumnName="Ulkesi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hakemlers">
+            <EntityTypeMapping TypeName="FutbolApiMvcModel.Hakemler">
+              <MappingFragment StoreEntitySet="Hakemler">
+                <ScalarProperty Name="HakemId" ColumnName="HakemId" />
+                <ScalarProperty Name="HakemAdi" ColumnName="HakemAdi" />
+                <ScalarProperty Name="HakemTelefon" ColumnName="HakemTelefon" />
+                <ScalarProperty Name="TecrubeYili" ColumnName="TecrubeYili" />
+                <ScalarProperty Name="HakemYas" ColumnName="HakemYas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maclars">
+            <EntityTypeMapping TypeName="FutbolApiMvcModel.Maclar">
+              <MappingFragment StoreEntitySet="Maclar">
+                <ScalarProperty Name="MacId" ColumnName="MacId" />
+                <ScalarProperty Name="MacSehir" ColumnName="MacSehir" />
+                <ScalarProperty Name="TaraftarSayisi" ColumnName="TaraftarSayisi" />
+                <ScalarProperty Name="GirisUcret" ColumnName="GirisUcret" />
+                <ScalarProperty Name="MacTarih" ColumnName="MacTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Takimlars">
+            <EntityTypeMapping TypeName="FutbolApiMvcModel.Takimlar">
+              <MappingFragment StoreEntitySet="Takimlar">
+                <ScalarProperty Name="TakimId" ColumnName="TakimId" />
+                <ScalarProperty Name="TakimAdi" ColumnName="TakimAdi" />
+                <ScalarProperty Name="TakimSehri" ColumnName="TakimSehri" />
+                <ScalarProperty Name="TakimUlkesi" ColumnName="TakimUlkesi" />
+                <ScalarProperty Name="TakimGalibiyet" ColumnName="TakimGalibiyet" />
+                <ScalarProperty Name="TakimMalubiyet" ColumnName="TakimMalubiyet" />
+                <ScalarProperty Name="TakimBeraberlik" ColumnName="TakimBeraberlik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

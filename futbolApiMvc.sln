@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "futbolApiMvc", "futbolApiMvc\futbolApiMvc.csproj", "{5D3FE8C1-8375-44B6-9BF5-A44D710CF074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvcFutbol", "mvcFutbol\mvcFutbol.csproj", "{45672F59-6472-4B9B-B0BA-3F4D250924F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D3FE8C1-8375-44B6-9BF5-A44D710CF074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3FE8C1-8375-44B6-9BF5-A44D710CF074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3FE8C1-8375-44B6-9BF5-A44D710CF074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3FE8C1-8375-44B6-9BF5-A44D710CF074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45672F59-6472-4B9B-B0BA-3F4D250924F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45672F59-6472-4B9B-B0BA-3F4D250924F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45672F59-6472-4B9B-B0BA-3F4D250924F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45672F59-6472-4B9B-B0BA-3F4D250924F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF173E97-E281-4C5A-B44A-284733C9C79D}
+	EndGlobalSection
+EndGlobal

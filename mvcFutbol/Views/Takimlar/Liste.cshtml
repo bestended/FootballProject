@@ -1,0 +1,62 @@
+﻿@model IEnumerable<mvcFutbol.Models.Takimlarim>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "TakimlarEY", null, new {@class="btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TakimAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TakimSehri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TakimUlkesi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TakimGalibiyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TakimMalubiyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TakimBeraberlik)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TakimAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TakimSehri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TakimUlkesi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TakimGalibiyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TakimMalubiyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TakimBeraberlik)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "TakimlarEY", new { id = item.TakimId }) |
+            @Html.ActionLink("Sil", "Sil", new { id = item.TakimId })
+        </td>
+    </tr>
+}
+
+</table>

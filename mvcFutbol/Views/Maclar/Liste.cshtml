@@ -1,0 +1,51 @@
+﻿@model IEnumerable<mvcFutbol.Models.Maclarim>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MAc Listesi</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "MaclarEY", null, new {@class="btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MacSehir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaraftarSayisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GirisUcret)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MacTarih)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MacSehir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaraftarSayisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GirisUcret)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MacTarih)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "MaclarEY", new { id = item.MacId }, new {@class="btn btn-warning"}) |
+            @Html.ActionLink("Sil", "Sil", new { id = item.MacId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
